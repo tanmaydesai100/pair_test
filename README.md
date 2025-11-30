@@ -1,26 +1,51 @@
-# Admin Dashboard
+# Learning Sessions Browser
 
-A modern, responsive admin dashboard application built with React for managing users, orders, accounts, and generating reports.
+A responsive web application for browsing and managing learning sessions with search, sort, and completion tracking.
 
-## Features
+## Project Structure
 
-- **Dashboard**: Real-time statistics and analytics overview
-- **User Management**: Create, view, edit, and delete user accounts
-- **Order Management**: Track and manage orders with status updates
-- **Account Management**: Monitor account balances and pending payments
-- **Reports**: Generate and export monthly reports in PDF format
-- **Authentication**: Secure login with role-based access control
-- **Responsive Design**: Optimized for desktop and mobile devices
+```
+src/
+├── components/           # Reusable UI components
+│   ├── Controls.jsx     # Search and sort controls
+│   ├── Header.jsx       # Application header
+│   ├── IndividualCard.jsx # Session card component
+│   └── SessionsList.jsx # List of session cards
+├── hooks/               # Custom React hooks
+│   ├── useDebounce.jsx  # Debounce hook for search
+│   └── useSessions.jsx  # Data fetching and state management
+├── utils/               # Utility functions
+│   ├── highlightMatch.js # Text highlighting for search
+│   └── stableSort.js    # Stable sorting implementation
+├── data/
+│   └── sessions.json    # Session data
+├── App.js               # Main application component
+├── App.css              # Global styles
+├── index.js             # Application entry point
+└── theme.js             # Material-UI theme configuration
+```
 
-## Tech Stack
+## File Descriptions
 
-- **React 19** - UI framework
-- **Redux Toolkit** - State management
-- **React Router** - Navigation and routing
-- **Material-UI** - Icon library
-- **Tailwind CSS** - Styling
-- **jsPDF** - PDF generation
-- **Jest & React Testing Library** - Testing
+### Components
+- **Controls.jsx** - Handles search input and sort toggle
+- **Header.jsx** - Displays the application header with title
+- **IndividualCard.jsx** - Renders a single session card with completion toggle
+- **SessionsList.jsx** - Manages the list of session cards and loading/error states
+
+### Hooks
+- **useDebounce.jsx** - Custom hook for debouncing search input
+- **useSessions.jsx** - Manages session data, loading states, and completion toggling
+
+### Utils
+- **highlightMatch.js** - Utility for highlighting search matches in text
+- **stableSort.js** - Stable sorting implementation that maintains item order for equal values
+
+### Data
+- **sessions.json** - Contains the list of learning sessions with their details
+
+
+
 
 ## Getting Started
 
@@ -55,18 +80,5 @@ The application will open at [http://localhost:3000](http://localhost:3000)
 - `npm test` - Launches the test runner
 - `npm run build` - Builds the app for production
 
-## Project Structure
 
 ```
-src/
-├── components/     # Reusable components
-├── pages/          # Page components
-├── redux/          # Redux store and slices
-├── router/         # Routing configuration
-├── data/           # Sample data
-└── utils/          # Utility functions
-```
-
-## License
-
-This project is private and proprietary.
